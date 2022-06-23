@@ -2,14 +2,6 @@ dir = File.dirname(File.expand_path(__FILE__))
 $LOAD_PATH.unshift dir + '/../lib'
 $TESTING = true
 
-# Run code coverage in MRI 1.9 only.
-if RUBY_VERSION >= '1.9' && RUBY_ENGINE == 'ruby'
-  require 'simplecov'
-  SimpleCov.start do
-    add_filter '/test/'
-  end
-end
-
 require 'minitest/pride'
 require 'minitest/autorun'
 
